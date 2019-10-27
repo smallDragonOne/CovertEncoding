@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Text;
 using System.Windows.Forms;
 
 namespace encodingCovert
@@ -10,10 +9,14 @@ namespace encodingCovert
         public Form1()
         {
             InitializeComponent();
+            this.textBox2.Text = "UTF-8";
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
+
+            
             var sourcePath = this.textBox1.Text;
 
             if (string.IsNullOrWhiteSpace(sourcePath))
@@ -40,7 +43,12 @@ namespace encodingCovert
                 return;
             }
 
-            FileEncoding.StartConvert(sourcePath,isFile);
+            if (string.IsNullOrWhiteSpace(this.textBox2.Text))
+            {
+                this.textBox2.Text = "UTF-8";
+            }
+
+            FileEncoding.StartConvert(sourcePath,isFile,this.textBox2.Text);
             MessageBox.Show("转换成功");
         }
     }
