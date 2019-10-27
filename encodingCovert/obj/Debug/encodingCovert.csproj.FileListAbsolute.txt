@@ -1,0 +1,10 @@
+C:\Users\zj\Desktop\personalProject\encodingCovert\encodingCovert\bin\Debug\encodingCovert.exe.config
+C:\Users\zj\Desktop\personalProject\encodingCovert\encodingCovert\bin\Debug\encodingCovert.exe
+C:\Users\zj\Desktop\personalProject\encodingCovert\encodingCovert\bin\Debug\encodingCovert.pdb
+C:\Users\zj\Desktop\personalProject\encodingCovert\encodingCovert\obj\Debug\encodingCovert.csprojAssemblyReference.cache
+C:\Users\zj\Desktop\personalProject\encodingCovert\encodingCovert\obj\Debug\encodingCovert.Form1.resources
+C:\Users\zj\Desktop\personalProject\encodingCovert\encodingCovert\obj\Debug\encodingCovert.Properties.Resources.resources
+C:\Users\zj\Desktop\personalProject\encodingCovert\encodingCovert\obj\Debug\encodingCovert.csproj.GenerateResource.cache
+C:\Users\zj\Desktop\personalProject\encodingCovert\encodingCovert\obj\Debug\encodingCovert.csproj.CoreCompileInputs.cache
+C:\Users\zj\Desktop\personalProject\encodingCovert\encodingCovert\obj\Debug\encodingCovert.exe
+C:\Users\zj\Desktop\personalProject\encodingCovert\encodingCovert\obj\Debug\encodingCovert.pdb
