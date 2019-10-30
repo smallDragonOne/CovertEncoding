@@ -9,13 +9,13 @@ namespace encodingCovert
     public  class FileEncoding
     {
 
-        public static void StartConvert(string path,bool isFile,string outEncoding)
+        public static void StartConvert(string path,bool isFile,string outEncoding,string inEncording)
         {
-            ConvertEncoding(path,isFile, outEncoding);
+            ConvertEncoding(path,isFile, outEncoding, inEncording);
             ;
         }
 
-        public static void ConvertEncoding(string sourceFile, bool isFile, string outEncoding,string desFile = "")
+        public static void ConvertEncoding(string sourceFile, bool isFile, string outEncoding,string inEncording, string desFile = "")
         {
             var fileList = new List<string>();
             if (isFile)
@@ -41,13 +41,26 @@ namespace encodingCovert
             var destFile = string.IsNullOrWhiteSpace(desFile) ? sourceFile : desFile;
 
             Parallel.ForEach(files, item => {
-                var r = new StreamReader(item, Encoding.GetEncoding("GB2312"), true);
+                var r = new StreamReader(item, GetReplaceUtf8(inEncording), true);
                 var readTxt = r.ReadToEnd();
                 r.Close();
-                File.WriteAllText(item, readTxt, Encoding.GetEncoding(outEncoding));
+                File.WriteAllText(item, readTxt, GetReplaceUtf8(outEncoding));
             });
            
             
+        }
+
+        private static Encoding GetReplaceUtf8(string encording)
+        {
+            if (encording == "utf-8")
+            {
+                return new UTF8Encoding(false);
+            }
+            else if (encording == "utf-8-bom")
+            {
+                return Encoding.UTF8;
+            }
+            else return Encoding.GetEncoding(encording);
         }
     }
 }
